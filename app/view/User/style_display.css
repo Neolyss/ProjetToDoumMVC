@@ -1,0 +1,114 @@
+body {
+    height: 100vh;
+    width: 100vw;
+
+    margin: 0px;
+
+    display: grid;
+
+    background: #222;
+    color: #eee;
+    font-family: "Dosis", sans-serif;
+}
+
+header{
+    width: 100vw;
+    height: 10vh;
+
+    grid-column: 1;
+    grid-row : 1 / 2;
+
+    background: #404040;
+    color: #ffffff;
+}
+
+header > h1 {
+    position: relative;
+
+    width: 100%;
+    height: auto;
+
+    margin: 0px;
+
+    text-align: center;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+}
+
+main {
+    grid-column: 1;
+    grid-row: 2 / 3;
+
+    width: 100vw;
+    height: 85vh;
+
+    margin: 0px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    color: white;
+}
+
+main > form {
+    position: absolute;
+    top: 50%;
+    left : 50%;
+
+    transform: translate(-50%,-50%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    list-style: none;
+
+    padding: 0px;
+    margin: 0px;
+}
+
+main > form > h2 {
+    margin: 0px;
+}
+
+main > form > p {
+    margin: 0px;
+}
+
+main > form > a {
+    text-decoration: none;
+}
+
+footer{
+    grid-column: 1;
+    grid-row: 3 / 4;
+
+    width: 100vw;
+    height: 5vh;
+
+    background:#404040;
+}
+
+footer p{
+    float :left;
+    color: #ffffff;
+    margin-left: 10px;
+    height: 0px;
+}
+
+.brk-btn {
+    background: none;
+    color: aqua;
+    text-transform: uppercase;
+    border: 0.2em solid aqua;
+    padding: 0.5em 1em;
+}
+
+.error {
+    color: red;
+}
