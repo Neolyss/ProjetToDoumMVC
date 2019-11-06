@@ -1,6 +1,6 @@
 <?php
-    $server ="mysql";
-    $host = "localhost:3307";
-    $base = "projet";
-    $user = "root";
-    $pass = "";
+
+    define ("DB_HOST", "localhost:3307");
+    define ("DB_NAME", "projet");
+    define ("DB_USER", "root");
+    define ("DB_PASS", "");

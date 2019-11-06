@@ -12,7 +12,7 @@
                     <h1>TO DOUM</h1>
                 </header>
                 <main>
-                    <form method=post action='login.php'>
+                    <form method=post action='index.php?action=login'>
                         <h2>Connexion</h2>
                         <p>Nom de compte :</p>
                         <input type='text' name='user'>
@@ -22,9 +22,11 @@
                         <a href='register.php'><p class='brk-btn'>Se créer un compte</p></a>
                 ");
             if(isset($_POST['user'])) {
-                 if ($_SESSION['error'] != "") { // Si il y a une erreur, on l'affiche
-                    echo("<p class='error'>". $_SESSION['error'] ."<p>");
-                 }
+                if(isset($_SESSION['error'])) {
+                    if ($_SESSION['error'] != "") { // Si il y a une erreur, on l'affiche
+                        echo("<p class='error'>" . $_SESSION['error'] . "<p>");
+                    }
+                }
             }
             echo("
                     </form>

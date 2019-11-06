@@ -8,6 +8,7 @@
 
 class Database
 {
+
     static protected $instance = null;
     protected $db;
 
@@ -18,7 +19,7 @@ class Database
             DB_USER,
             DB_PASS
         );
-    }
+}
 
     public static function getConnexion()
     {

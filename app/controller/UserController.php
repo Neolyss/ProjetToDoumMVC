@@ -8,6 +8,10 @@ class UserController extends Controller
         $this->getVue()->display();
     }
 
+    public function login() {
+        UserModel::getUserConnexion();
+    }
+
     /**
      * @return View
      */

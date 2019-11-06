@@ -11,6 +11,15 @@ class Router {
                     "action" => "display",
                     "param" => null);
             }
+        }else {
+            switch ($request['action']) {
+                case "login":
+                    $result = array(
+                        "controller" => "User",
+                        "action" => "login",
+                        "param" => null);
+                    break;
+            }
         }
         return $result;
     }
