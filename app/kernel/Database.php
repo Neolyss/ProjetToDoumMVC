@@ -33,9 +33,9 @@ class Database
     }
 
     public function __call($method, array $arg) {
-        // Si on appelle une méthode qui n'existe pas, on
-        // delegue cet appel à l'objet PDO $this->db
-        /* Si on fait un query, par exemple, ça demande à l'objet PDO
+        /* Si on appelle une méthode qui n'existe pas, on
+        delegue cet appel à l'objet PDO $this->db
+        Si on fait un query, par exemple, ça demande à l'objet PDO
         d'exécuter la commande */
 
         return call_user_func_array(array($this->db, $method), $arg);

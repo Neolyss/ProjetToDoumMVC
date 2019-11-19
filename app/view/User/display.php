@@ -5,14 +5,14 @@
             <meta charset='utf-8'>
             <head>
                 <title>Login</title>
-                <link rel='stylesheet' type='text/css' href='../app/view/User/style_display.css'>
+                <link rel='stylesheet' type='text/css' href='style_display.css'>
             </head>
             <body>
                 <header>
                     <h1>TO DOUM</h1>
                 </header>
                 <main>
-                    <form method=post action='index.php?action=login'>
+                    <form method=post action='accueil.php?action=login'>
                         <h2>Connexion</h2>
                         <p>Nom de compte :</p>
                         <input type='text' name='user'>
