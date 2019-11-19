@@ -1,1 +1,1 @@
-Ce projet est une améloriation du projet TO DOUM
+Ce projet est une amélioration du projet TO DOUM
