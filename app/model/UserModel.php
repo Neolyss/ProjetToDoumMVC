@@ -4,14 +4,19 @@
 class UserModel extends Model {
 
     public static function getUserConnexion() {
-        $db = Database::getConnexion();
+        if(isset($_POST['user']) && isset($_POST['pwd'])) {
+            var_dump($_POST['user']);
+            var_dump($_POST['pwd']);
 
-        $sql = "SELECT Username,Pwd_user FROM utilisateur";
-        //$sql = "SELECT Username,Pwd_user FROM utilisateur WHERE Username='". $_POST["user"] . "' AND Pwd_user ='" . $_POST["pwd"] . "';";
+            $db = Database::getConnexion();
 
-        $res = $db->query($sql)->fetchAll();
+            $sql = "SELECT Username,Pwd_user FROM utilisateur WHERE Username='". $_POST["user"] . "' AND Pwd_user ='" . $_POST["pwd"] . "';";
+            echo ($sql);
 
-        var_dump($res);
+            $res = $db->query($sql)->fetch();
+
+            return ($res);
+        }
     }
 
     public function updateUserInfo($user, $mail, $id){

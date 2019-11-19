@@ -8,7 +8,7 @@ class Router {
             if(!isset($_SESSION["user"])) { // Si on n'est pas connecté
                 $result = array(
                     "controller" => "User",
-                    "action" => "display",
+                    "action" => "connexion",
                     "param" => null);
             }
         }else {

@@ -21,13 +21,11 @@
                         <input type='submit' class='brk-btn' value='Se connecter'>
                         <a href='register.php'><p class='brk-btn'>Se créer un compte</p></a>
                 ");
-            if(isset($_POST['user'])) {
                 if(isset($_SESSION['error'])) {
                     if ($_SESSION['error'] != "") { // Si il y a une erreur, on l'affiche
                         echo("<p class='error'>" . $_SESSION['error'] . "<p>");
                     }
                 }
-            }
             echo("
                     </form>
                 </main>
