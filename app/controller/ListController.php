@@ -16,4 +16,17 @@ class ListController extends Controller
             exit();
         }
     }
+
+    public function showList() {
+        $data = array(
+            'today' => ListModel::getTodayTasks(),
+            'late' => ListModel::getLateTasks(),
+            'mail' => ListModel::getMail(),
+            'listName' => ListModel::getListName($_REQUEST['param']),
+            'listRight' => ListModel::getRight($_REQUEST['param'])
+        );
+        //var_dump($data);
+        $this->setData($data);
+        $this->display();
+    }
 }
