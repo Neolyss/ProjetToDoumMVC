@@ -4,11 +4,11 @@
 class DroitModel
 {
 
-    public function getDroits($id)
+    public function getDroits($idList)
     {
         $db = Database::getConnexion();
         $sql = "SELECT droit.Droit_list FROM utilisateur NATURAL JOIN droit NATURAL JOIN liste 
-        WHERE utilisateur.Username = '" . $_SESSION['user'] . "' AND liste.Id_list =" . $id . ";";
+        WHERE utilisateur.Username = '" . $_SESSION['user'] . "' AND liste.Id_list =" . $idList . ";";
         $liste = $db->query($sql)->fetch();
         return $liste;
     }
@@ -19,10 +19,8 @@ class DroitModel
                                  'admin')";
     }
 
-    public function setDroits($user, $id, $typeDroit){
-        $sql = "INSERT INTO droit VALUES ('". $id."',
-                                 '". $user ."',
-                                 '". $typeDroit ."')";
+    public function addRightUsers(){
+
     }
 
 

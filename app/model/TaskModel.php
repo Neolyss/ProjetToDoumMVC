@@ -31,30 +31,10 @@ class TaskModel
         $db->query($sql)->fetch();
     }
 
-    public function searchTask($id)
+    public function displayTask($id)
     {
         $db = Database::getConnexion();
         $sql = "SELECT Id_tach,Nom_tach,DateLim_tach FROM tache WHERE Id_list =" . $id . " AND tache.Arch_tach = 0";
-        $ligne = $db->query($sql)->fetch();
-        return $ligne;
-    }
-
-    public function getLateTasks()
-    {
-        $db = Database::getConnexion();
-        $sql = "SELECT COUNT(tache.DateLim_tach) as nombreActivite FROM utilisateur INNER JOIN droit ON utilisateur.Id_user = droit.Id_user INNER JOIN liste ON droit.Id_list=liste.Id_list
-   INNER JOIN tache ON liste.Id_list = tache.Id_list WHERE DATE(tache.DateLim_tach) < CURRENT_DATE AND tache.Arch_tach = 0 AND utilisateur.Id_user
-   IN (SELECT utilisateur.Id_user FROM utilisateur WHERE utilisateur.Username = '" . $_SESSION['user'] . "');";
-        $ligne = $db->query($sql)->fetch();
-        return $ligne;
-    }
-
-    public function getTodayTasks()
-    {
-        $db = Database::getConnexion();
-        $sql = "SELECT COUNT(tache.DateLim_tach) as nombreActivite FROM utilisateur INNER JOIN droit ON utilisateur.Id_user = droit.Id_user INNER JOIN liste ON droit.Id_list=liste.Id_list
-   INNER JOIN tache ON liste.Id_list = tache.Id_list WHERE DATE(tache.DateLim_tach) = CURRENT_DATE AND tache.Arch_tach = 0 AND utilisateur.Id_user
-   IN (SELECT utilisateur.Id_user FROM utilisateur WHERE utilisateur.Username = '" . $_SESSION['user'] . "');";
         $ligne = $db->query($sql)->fetch();
         return $ligne;
     }

@@ -37,7 +37,6 @@ class Kernel
             require_once("../app/model/$class.php");
             //var_dump("../app/model/$class.php");
         }
-
     }
 
 }
