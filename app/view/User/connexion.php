@@ -1,2 +1,2 @@
 <?php
-    include_once "display.php";
+    include_once "display_login.php";

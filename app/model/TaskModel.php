@@ -1,14 +1,10 @@
 <?php
 
-include_once("db.inc.php");
-session_start();
-
-
 class TaskModel
 {
 
 
-    public function updateTask($nom, $date, $notes, $lien, $id)
+    public static function updateTask($nom, $date, $notes, $lien, $id)
     {
         $db = Database::getConnexion();
         $sql = "UPDATE tache SET Nom_tach ='" . $nom . "',
@@ -19,7 +15,7 @@ class TaskModel
         $db->query($sql)->fetch();
     }
 
-    public function addTask($nom, $date, $notes, $lien, $id)
+    public static function addTask($nom, $date, $notes, $lien, $id)
     {
         $db = Database::getConnexion();
         $sql = "INSERT INTO tache(Nom_tach,DateLim_tach,Arch_tach,Notes_tach,Lien_tach,Id_list) VALUES ('" .$nom . "',
@@ -31,35 +27,18 @@ class TaskModel
         $db->query($sql)->fetch();
     }
 
-    public function displayTask($id)
+    public static function archiveTask($idTask)
     {
         $db = Database::getConnexion();
-        $sql = "SELECT Id_tach,Nom_tach,DateLim_tach FROM tache WHERE Id_list =" . $id . " AND tache.Arch_tach = 0";
-        $ligne = $db->query($sql)->fetch();
-        return $ligne;
+        $sql = "UPDATE tache SET Arch_Tach = 1 WHERE Id_tach = '" . $idTask . "';";
+        $db->query($sql);
     }
 
-    public function getTask($id)
+    public static function desarchiveTask($idTask)
     {
         $db = Database::getConnexion();
-        $sql = "SELECT * FROM tache WHERE id_tach ='" . $id . "';";
-        $ligne = $db->query($sql)->fetch();
-        return $ligne;
-    }
-
-    public function archiveTask($id)
-    {
-        $db = Database::getConnexion();
-        $sql = "UPDATE tache SET Arch_Tach = 1 WHERE Id_tach = '" . $id . "';";
+        $sql = "UPDATE tache SET Arch_Tach = 0 WHERE Id_tach = '" . $idTask . "';";
         $db->query($sql)->fetch();
     }
-
-    public function desarchiveTask($id)
-    {
-        $db = Database::getConnexion();
-        $sql = "UPDATE tache SET Arch_Tach = 0 WHERE Id_tach = '" . $id . "';";
-        $db->query($sql)->fetch();
-    }
-
 
 }

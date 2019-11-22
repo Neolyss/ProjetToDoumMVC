@@ -1,22 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="378705a4-b5ee-4bb3-8907-ff2fff4a68e7" name="Default Changelist" comment="Rectification projet">
-      <change afterPath="$PROJECT_DIR$/app/controller/ListController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/view/User/home.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/view/User/modify.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/view/User/newList.php" afterDir="false" />
+    <list default="true" id="378705a4-b5ee-4bb3-8907-ff2fff4a68e7" name="Default Changelist" comment="Affichage partielle d'une liste + Profil + Deconnexion(bouton)">
+      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controller/TaskController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/List/display_list.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/List/display_list_archived.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/List/listArchived.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/List/showList.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/List/style_display_list.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/List/style_list_archived.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/User/display_register.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/User/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controller/ListController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/ListController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/kernel/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/kernel/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/kernel/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/kernel/Kernel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/kernel/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/kernel/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/kernel/View.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/kernel/View.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/DroitModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/DroitModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/model/ListModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/ListModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/model/TaskModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/TaskModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/model/UserModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/UserModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/Accueil/accueil.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/User/display_home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/Accueil/style_accueil.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/User/style_home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/User/connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/User/connexion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/User/display.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/User/display_login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/User/display_home.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/User/display_home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/User/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/User/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/User/style_display.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/User/style_display_login_register.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +34,20 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -42,7 +63,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CodeIgniter-3.1.11" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/view/List" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -52,9 +73,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\ProjetToDoumMVC\app\view\List" />
       <recent name="C:\wamp64\www\ProjetToDoumMVC\app\view\User" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\ProjetToDoumMVC\app\view\List" />
       <recent name="C:\wamp64\www\ProjetToDoumMVC\app\view\Connexion" />
       <recent name="C:\wamp64\www\ProjetToDoumMVC\app\kernel" />
     </key>
@@ -80,7 +103,9 @@
       <workItem from="1574157608265" duration="10222000" />
       <workItem from="1574251968583" duration="2773000" />
       <workItem from="1574262990474" duration="12287000" />
-      <workItem from="1574321361188" duration="4404000" />
+      <workItem from="1574321361188" duration="13408000" />
+      <workItem from="1574353024587" duration="7975000" />
+      <workItem from="1574424834930" duration="5675000" />
     </task>
     <task id="LOCAL-00001" summary="Version MVC ( Mise en place du kernel, de la config ) + Page de connexion ( 1ère Vue )">
       <created>1572859642076</created>
@@ -110,7 +135,21 @@
       <option name="project" value="LOCAL" />
       <updated>1574167003574</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Modification Compte; Ajout de liste; Affichage droit liste">
+      <created>1574325935664</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1574325935664</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Affichage partielle d'une liste + Profil + Deconnexion(bouton)">
+      <created>1574333195552</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1574333195552</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,7 +173,9 @@
     <MESSAGE value="Interaction avec BDD, model" />
     <MESSAGE value="Ajout du système de connexion ( login.php + connexion.php + display.php )&#10;Modification du routeur ( nouvelle route )&#10;Controlleur User amélioré" />
     <MESSAGE value="Rectification projet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rectification projet" />
+    <MESSAGE value="Modification Compte; Ajout de liste; Affichage droit liste" />
+    <MESSAGE value="Affichage partielle d'une liste + Profil + Deconnexion(bouton)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Affichage partielle d'une liste + Profil + Deconnexion(bouton)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="181" key="#SQL_Dialects" timestamp="1574322931192">
@@ -153,34 +194,42 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="277" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1574263045728" />
-    <state x="754" y="354" key="NewPhpClassDialog" timestamp="1574321446484">
+    <state x="540" y="265" key="IDE.errors.dialog" timestamp="1574338954623">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="754" y="354" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1574321446484" />
-    <state x="171" y="902" key="NewPhpFileDialog" timestamp="1574325825516">
+    <state x="540" y="265" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1574338954623" />
+    <state x="754" y="354" key="NewPhpClassDialog" timestamp="1574355715920">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="171" y="902" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1574325825516" />
+    <state x="754" y="354" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1574355715920" />
+    <state x="171" y="902" key="NewPhpFileDialog" timestamp="1574425179856">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="171" y="902" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1574425179856" />
+    <state x="722" y="233" key="RollbackChangesDialog" timestamp="1574355699749">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="722" y="233" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1574355699749" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1571897754726">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1571897754726" />
-    <state x="552" y="255" key="Vcs.Push.Dialog.v2" timestamp="1574163213067">
+    <state x="552" y="255" key="Vcs.Push.Dialog.v2" timestamp="1574333201377">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="255" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1574163213067" />
-    <state x="668" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1574251972356">
+    <state x="552" y="255" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1574333201377" />
+    <state x="668" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1574424855970">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="668" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1574251972356" />
+    <state x="668" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1574424855970" />
     <state x="771" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1574163188729">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="771" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1574163188729" />
-    <state x="668" y="323" key="git4idea.merge.GitPullDialog" timestamp="1572859656275">
+    <state x="668" y="323" key="git4idea.merge.GitPullDialog" timestamp="1574330791768">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="668" y="323" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1572859656275" />
+    <state x="668" y="323" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1574330791768" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1574266586460">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

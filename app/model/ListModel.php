@@ -4,18 +4,27 @@
 class ListModel
 {
 
-    public static function getArchivedLists($id){
+    public static function getArchivedLists($idList){
         $db = Database::getConnexion();
-        $sql = "SELECT Id_tach,Nom_tach FROM tache WHERE Id_list ='". $id . "' AND tache.Arch_tach = 1;";
-        $liste = $db->query($sql)->fetch();
-        return $liste;
+        $sql = "SELECT Id_tach,Nom_tach FROM tache WHERE Id_list ='". $idList . "' AND tache.Arch_tach = 1;";
+        $request = $db->query($sql)->fetchAll();
+        //var_dump($request);
+        $array = array();
+        foreach($request as $ligne) {
+            $liste = array(
+                'Id_task' => $ligne['Id_tach'],
+                'taskName' => $ligne['Nom_tach']
+            );
+            $array[] = $liste;
+        }
+        return $array;
     }
 
     public static function getListName($id){
         $db = Database::getConnexion();
         $sql = "SELECT Nom_list FROM liste WHERE Id_list ='". $id . "';";
         $liste = $db->query($sql)->fetch();
-        return $liste;
+        return $liste['Nom_list'];
     }
 
     public static function addList($name){
@@ -28,20 +37,19 @@ class ListModel
     {
         $db = Database::getConnexion();
 
-        $sql = "INSERT INTO droit VALUES ('". $idUser."','". $idList ."','admin');";
+        $sql = "INSERT INTO droit VALUES ('". $idList ."','". $idUser ."','admin');";
 
         $db->query($sql);
-
-        return(self::getDroits($idList));
+        return(self::getRight($idList));
     }
 
-    public static function getDroits($idList)
+    public static function getRight($idList)
     {
         $db = Database::getConnexion();
-        $sql = "SELECT droit.Droit_list FROM utilisateur NATURAL JOIN droit NATURAL JOIN liste 
-        WHERE utilisateur.Username = '" . $_SESSION['user'] . "' AND liste.Id_list =" . $idList . ";";
+        $sql = "SELECT droit.Droit_list as listRight FROM utilisateur NATURAL JOIN droit NATURAL JOIN liste 
+        WHERE utilisateur.Username='" . $_SESSION['user'] . "'AND liste.Id_list='" . $idList . "';";
         $liste = $db->query($sql)->fetch();
-        return ($liste['Droit_list']);
+        return ($liste['listRight']);
     }
 
     public static function getListId($name){
@@ -54,4 +62,57 @@ class ListModel
         return $ligne ['Id_list'];
     }
 
+    public static function getMail(){
+        $db = Database::getConnexion();
+        $ligne = $db->query("SELECT Mail_user FROM utilisateur WHERE Username='" . $_SESSION['user'] . "'")->fetch();
+        return $ligne['Mail_user'];
+    }
+
+    // Obtenir le nombre de tâches en retard
+    public static function getLateTasks()
+    {
+        $db = Database::getConnexion();
+        $sql = "SELECT COUNT(tache.DateLim_tach) as nombreActivite FROM utilisateur INNER JOIN droit ON utilisateur.Id_user = droit.Id_user INNER JOIN liste ON droit.Id_list=liste.Id_list
+        INNER JOIN tache ON liste.Id_list = tache.Id_list WHERE DATE(tache.DateLim_tach) < CURRENT_DATE AND tache.Arch_tach = 0 AND utilisateur.Id_user
+        IN (SELECT utilisateur.Id_user FROM utilisateur WHERE utilisateur.Username = '" . $_SESSION['user'] . "');";
+        $ligne = $db->query($sql)->fetch();
+        return $ligne['nombreActivite'];
+    }
+
+    // Obtenir le nombre de tâches à faire aujourd'hui
+    public static function getTodayTasks()
+    {
+        $db = Database::getConnexion();
+        $sql = "SELECT COUNT(tache.DateLim_tach) as nombreActivite FROM utilisateur INNER JOIN droit ON utilisateur.Id_user = droit.Id_user INNER JOIN liste ON droit.Id_list=liste.Id_list
+        INNER JOIN tache ON liste.Id_list = tache.Id_list WHERE DATE(tache.DateLim_tach) = CURRENT_DATE AND tache.Arch_tach = 0 AND utilisateur.Id_user
+        IN (SELECT utilisateur.Id_user FROM utilisateur WHERE utilisateur.Username = '" . $_SESSION['user'] . "');";
+        $ligne = $db->query($sql)->fetch();
+        return $ligne['nombreActivite'];
+    }
+
+    public static function getTask($id)
+    {
+        $db = Database::getConnexion();
+        $sql = "SELECT * FROM tache WHERE id_tach ='" . $id . "';";
+        $request = $db->query($sql)->fetch();
+        //var_dump($request);
+        return $request;
+    }
+
+    public static function displayTask($id)
+    {
+        $db = Database::getConnexion();
+        $sql = "SELECT Id_tach,Nom_tach,DateLim_tach FROM tache WHERE Id_list =" . $id . " AND tache.Arch_tach = 0";
+        $request = $db->query($sql)->fetchAll();
+        //var_dump($request);
+        $array = array();
+        foreach($request as $ligne) {
+            $liste = array(
+                'Id_task' => $ligne['Id_tach'],
+                'taskName' => $ligne['Nom_tach'],
+                'taskDate' => $ligne['DateLim_tach']);
+            $array[] = $liste;
+        }
+        return $array;
+    }
 }

@@ -9,7 +9,11 @@ class Router {
                 $result = array(
                     "controller" => "User",
                     "action" => "connexion",
-                    "param" => null);
+                    "param" => null
+                );
+            } else {
+                // Redirection vers la page d'accueil
+                header("Location: index.php?action=home");
             }
         }else {
             switch ($request['action']) {
@@ -18,50 +22,96 @@ class Router {
                     $result = array(
                         "controller" => "User",
                         "action" => "login",
-                        "param" => null);
+                        "param" => null
+                    );
                     break;
                 case "logout": // Pas de vue associé
                     $result = array(
                         "controller" => "User",
                         "action" => "logout",
-                        "param" => null);
+                        "param" => null
+                    );
+                    break;
+                case "register":
+                    $result = array(
+                        "controller" => "User",
+                        "action" => "register",
+                        "param" => null
+                    );
+                    break;
+                case "createUser":
+                    $result = array(
+                        "controller" => "User",
+                        "action" => "createUser",
+                        "param" => null
+                    );
                     break;
                 case "update": // Pas de vue associé
                     $result = array(
                         "controller" => "User",
                         "action" => "update",
-                        "param" => $_REQUEST['param']);
+                        "idUser" => $_REQUEST['idUser']
+                    );
                     break;
                 case "modify":
                     $result = array(
                         "controller" => "User",
                         "action" => "modify",
-                        "param" => null);
+                        "param" => null
+                    );
                     break;
                 case "newList":
                     $result = array(
                         "controller" => "User",
                         "action" => "newList",
-                        "param" => null);
+                        "param" => null
+                    );
                     break;
                 case "home":
                     $result = array(
                         "controller" => "User",
                         "action" => "home",
-                        "param" => null);
+                        "param" => null
+                    );
                     break;
                 // LIST
                 case "addList": // Pas de vue associé
                     $result = array(
                         "controller" => "List",
                         "action" => "addList",
-                        "param" => $_REQUEST['param']);
+                        "idUser" => $_REQUEST['idUser']
+                    );
                     break;
-                case "List":
+                case "showList":
                     $result = array(
                         "controller" => "List",
-                        "action" => "List",
-                        "param" => $_REQUEST['param']);
+                        "action" => "showList",
+                        "idList" => $_REQUEST['idList']
+                    );
+                    break;
+                case "listArchived":
+                    $result = array(
+                        "controller" => "List",
+                        "action" => "listArchived",
+                        "idList" => $_REQUEST['idList']
+                    );
+                    break;
+                // TASK
+                case "archive": // Pas de vue associé
+                $result = array(
+                    "controller" => "Task",
+                    "action" => "archive",
+                    "idTask" => $_REQUEST['idTask'],
+                    "idList" => $_REQUEST['idList']
+                );
+                break;
+                case "unarchived": // Pas de vue associé
+                    $result = array(
+                        "controller" => "Task",
+                        "action" => "unarchived",
+                        "idTask" => $_REQUEST['idTask'],
+                        "idList" => $_REQUEST['idList']
+                    );
                     break;
             }
         }

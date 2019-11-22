@@ -6,17 +6,18 @@ class UserModel extends Model {
     // Tester la connection
     public static function getUserConnexion() {
         if(isset($_POST['user']) && isset($_POST['pwd'])) {
-            var_dump($_POST['user']);
-            var_dump($_POST['pwd']);
 
             $db = Database::getConnexion();
 
             $sql = "SELECT Username,Pwd_user FROM utilisateur WHERE Username='". $_POST["user"] . "' AND Pwd_user ='" . $_POST["pwd"] . "';";
             echo ($sql);
 
-            $res = $db->query($sql)->fetch();
+            $request = $db->query($sql)->fetch();
 
-            return ($res);
+            $_SESSION["error"] = "";
+            $_SESSION['user'] = $request['Username'];
+
+            return ($request);
         }
     }
 
@@ -59,7 +60,8 @@ class UserModel extends Model {
         //var_dump($request);
         $array = array();
         foreach($request as $ligne) {
-            $liste = array('Id_list' => $ligne['Id_list'],
+            $liste = array(
+                'Id_list' => $ligne['Id_list'],
                 'Nom_list' => $ligne['Nom_list'],
                 'Droit_list' => $ligne['Droit_list']);
             $array[] = $liste;
@@ -67,7 +69,6 @@ class UserModel extends Model {
         return $array;
     }
 
-    // Faire avec l'adresse mail !!!!
     public static function updateUserInfo($user, $mail, $id){
         $db = Database::getConnexion();
         // Requête pour mettre à jour les informations sur l’utilisateur
@@ -89,29 +90,34 @@ class UserModel extends Model {
         return $ligne;
     }
 
-    public static function checkUsernameTaken(){
+    public static function checkUsernameTaken($username){
         $db = Database::getConnexion();
-        $sql = "SELECT Username FROM utilisateur;";
+        $sql = "SELECT Username FROM utilisateur WHERE Username='". $username ."';";
         $ligne = $db->query($sql)->fetch();
-        //Il faudrait me dire quoi mettre, je sais pas ce qui conviendrait comme erreur
-        if($ligne != ""){
-            return "Le nom d'utilisateur est pris";
-        }
+        return($ligne['Username']);
     }
 
     public static function createNewUser($user, $pwd, $mail){
         $db = Database::getConnexion();
         $sql = "INSERT INTO utilisateur(Username,Pwd_user,Mail_user) VALUES 
         ('" . $user . "','" . $pwd . "','" . $mail . "')";
-        $db->query($sql)->fetch();
+        $db->query($sql);
+        if(self::checkAccountCreation($user,$pwd)) {
+            $_SESSION['error'] = "";
+            $_SESSION['user'] = $user;
+            return true;
+        } else {
+            $_SESSION['error'] = "Erreur lors de la création du compte";
+            return false;
+        }
     }
 
     public static function checkAccountCreation($user, $pwd){
         $db = Database::getConnexion();
         $sql = "SELECT Username,Pwd_user FROM utilisateur WHERE Username='" . $user . "' 
         AND Pwd_user ='" . $pwd . "';";
-        $db->query($sql)->fetch();
-        //Il faudrait me dire quoi mettre, je sais pas ce qui conviendrait comme erreur
+        $request = $db->query($sql)->fetch();
+        return($request['Username']);
     }
 
     public static function getMail(){

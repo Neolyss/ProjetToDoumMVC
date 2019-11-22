@@ -9,15 +9,10 @@ class UserController extends Controller
     }
 
     public function login() {
-        session_start();
-        $login = UserModel::getUserConnexion();
-        if($login) { // Si l'utilisateur est connecté
-            $_SESSION["error"] = "";
-            $_SESSION['user'] = $login['Username'];
+        if(UserModel::getUserConnexion()) { // Si l'utilisateur est connecté
             header('Location: index.php?action=home'); // Redirection vers la page Home.php
             exit();
-        } else // Si l'utilisateur n'est pas connecté
-        {
+        } else {  // Si l'utilisateur n'est pas connecté
             $_SESSION["error"] = "Erreur lors de la connexion";
             header('Location: index.php'); // Redirection vers la page index.php ( qui équivaut à la page de connexion au niveau du routeur )
             exit();
@@ -25,15 +20,46 @@ class UserController extends Controller
     }
 
     public function logout() {
-        // On relance la session puis on la détruit pour pouvoir déconnecter l'utilisateur
-        session_start();
+        // On détruit la session pour pouvoir déconnecter l'utilisateur
         session_unset();
-        if (!isset($_SESSION)) { // Si on est bien déconnecté
-            header('Location: login.php');
-            exit();
-        } else { // Si on est encore connecté
+        if (!$_SESSION) { // Si on est bien déconnecté
+            $_SESSION["error"] = "";
             header('Location: index.php');
             exit();
+        } else { // Si on est encore connecté
+            $_SESSION["error"] = "Erreur lors de la déconnection";
+            header('Location: index.php?action=home');
+            exit();
+        }
+    }
+
+    public function register() {
+        $this->display();
+    }
+    
+    public function createUser() {
+        session_start();
+        if (isset($_POST['user']) && isset($_POST['pwd']) && isset($_POST['mail'])) { // Si l'utilisateur a rempli tous les champs
+            if ($_POST['user'] && $_POST['pwd'] && $_POST['mail']) {
+                //var_dump(UserModel::checkUsernameTaken($_POST['user']));
+                if (UserModel::checkUsernameTaken($_POST['user'])) { // Si le pseudo est déjà pris par un autre utilisateur
+                    $_SESSION['error'] = "Ce nom est déjà pris par un autre utilisateur";
+                    header("Location: index.php?action=register");
+                    exit();
+                } else {
+                    if(UserModel::createNewUser($_POST['user'],$_POST['pwd'],$_POST['mail'])) { // Si l'utilisateur est bien créé
+                        header("Location: index.php?action=home");
+                        exit();
+                    } else {  // Sinon si la création a échoué
+                        header("Location : index.php?action=register");
+                        exit();
+                    }
+                }
+            } else { // On n'a pas renseigné tous les champs
+                $_SESSION["error"] = "Veuillez renseigner tous les champs";
+                header("Location: index.php?action=register");
+                exit();
+            }
         }
     }
 
@@ -64,7 +90,7 @@ class UserController extends Controller
 
     public function update() {
         //var_dump($_POST);
-        if(UserModel::updateUserInfo($_POST['username'],$_POST['mail'],$_REQUEST['param'])) {
+        if(UserModel::updateUserInfo($_POST['username'],$_POST['mail'],$_REQUEST['idUser'])) {
             header("Location: index.php?action=home");
             exit();
         }

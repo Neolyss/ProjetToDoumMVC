@@ -27,7 +27,7 @@
                                 //var_dump($this->data);
                                 echo ("
                                 <p>Modification du Profil</p> 
-                                <form method='post' action='index.php?action=update&param=". $this->data['idUser'] ."'>
+                                <form method='post' action='index.php?action=update&idUser=". $this->data['idUser'] ."'>
                                 <p> Pseudo : <input type='text' name='username' value='". $_SESSION['user']."'/></p>
                                 <p> Mail : <input type='text' name='mail' value='". $this->data['mail'] ."'/></p>
                                 <input class='brk-btn' type='submit' value='Modifier'>
@@ -62,7 +62,7 @@
                             echo ("<style>#ajouter {display: none}</style>"); // On enlève le lien qui permet d'ajouter une liste
                             // On ajoute un petit formulaire pour ajouter la liste à la base de donnée
                             echo ("
-                            <form method='post' action='index.php?action=addList&param=". $this->data['idUser'] ."'>
+                            <form method='post' action='index.php?action=addList&idUser=". $this->data['idUser'] ."'>
                                 <p>Nom liste : 
                                     <input type='text' name='nomList'>
                                     <input class='brk-btn' type='submit' value='Ajouter liste'>
@@ -77,7 +77,7 @@
                     <div id='liste'>");
                     //var_dump($this->data['list']);
                     foreach ($this->data['list'] as $list) { // Affichage de toutes les listes disponibles
-                        echo "<p><a href='index.php?action=list&param=". $list["Id_list"] . "'>". $list["Nom_list"] ."</a> Droit = " . $list['Droit_list']."</p>";
+                        echo "<p><a href='index.php?action=showList&idList=". $list["Id_list"] . "'>". $list["Nom_list"] ."</a> Droit = " . $list['Droit_list']."</p>";
                         // Si l'utilisateur a le droit de donner les droits
                         if($list['Droit_list'] == "admin") {
                             // A FAIRE

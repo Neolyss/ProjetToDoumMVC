@@ -5,7 +5,7 @@
             <meta charset='utf-8'>
             <head>
                 <title>Login</title>
-                <link rel='stylesheet' type='text/css' href='../app/view/User/style_display.css'>
+                <link rel='stylesheet' type='text/css' href='../app/view/User/style_display_login_register.css'>
             </head>
             <body>
                 <header>
@@ -19,7 +19,7 @@
                         <p>Mot de passe :</p>
                         <input type='password' name='pwd'>
                         <input type='submit' class='brk-btn' value='Se connecter'>
-                        <a href='register.php'><p class='brk-btn'>Se créer un compte</p></a>
+                        <a href='index.php?action=register'><p class='brk-btn'>Se créer un compte</p></a>
                 ");
                 if(isset($_SESSION['error'])) {
                     if ($_SESSION['error'] != "") { // Si il y a une erreur, on l'affiche
