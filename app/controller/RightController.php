@@ -14,4 +14,11 @@ class RightController extends Controller {
         $this->setData($data);
         $this->display();
     }
+
+    public function addRight() {
+        //var_dump($_POST);
+        RightModel::addRightUser($_REQUEST['idList'],$_REQUEST['idUser'],$_REQUEST['droit']);
+        header("Location: index.php?action=right&idList=". $_REQUEST['idList']);
+        exit();
+    }
 }

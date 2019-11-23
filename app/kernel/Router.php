@@ -151,6 +151,13 @@ class Router {
                         "idList" => $_REQUEST['idList']
                     );
                     break;
+                case "addRight":
+                    $result = array(
+                        "controller" => "Right",
+                        "action" => "addRight",
+                        "idList" => $_REQUEST['idList']
+                    );
+                    break;
             }
         }
         // Vardump de debug

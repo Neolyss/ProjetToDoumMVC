@@ -30,7 +30,7 @@
                         <div id='right_container'>
                             <p>" . $this->data['listName'] . "</p>
                             <a href='index.php'><p>Retour</p></a> 
-                            <form method='post' id='formAdd' action='ajoutDroit.php?idList=" . $_REQUEST['idList'] . "'>
+                            <form method='post' id='formAdd' action='index.php?action=addRight&idList=" . $_REQUEST['idList'] . "'>
                                <p>Utilisateur à ajouter</p>
                                <select name='idUser'>
                                ");

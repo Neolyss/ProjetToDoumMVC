@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="378705a4-b5ee-4bb3-8907-ff2fff4a68e7" name="Default Changelist" comment="Ajout de la fonction Ajouter une tâche">
-      <change afterPath="$PROJECT_DIR$/app/controller/RightController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/view/Right/display_right.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/view/Right/right.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/view/Right/style_right.css" afterDir="false" />
+    <list default="true" id="378705a4-b5ee-4bb3-8907-ff2fff4a68e7" name="Default Changelist" comment="Ajout de la page right.php (qui s'occupe de la gestion des droits">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controller/RightController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/RightController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/kernel/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/kernel/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/DroitModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/RightModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/ListModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/ListModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/TaskModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/TaskModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/UserModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/UserModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/User/display_home.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/User/display_home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/RightModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/RightModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/Right/display_right.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/Right/display_right.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +90,7 @@
       <workItem from="1574262990474" duration="12287000" />
       <workItem from="1574321361188" duration="13408000" />
       <workItem from="1574353024587" duration="7975000" />
-      <workItem from="1574424834930" duration="14252000" />
+      <workItem from="1574424834930" duration="14967000" />
     </task>
     <task id="LOCAL-00001" summary="Version MVC ( Mise en place du kernel, de la config ) + Page de connexion ( 1ère Vue )">
       <created>1572859642076</created>
@@ -161,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574499661947</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Ajout de la page right.php (qui s'occupe de la gestion des droits">
+      <created>1574502047128</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1574502047128</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,7 +191,8 @@
     <MESSAGE value="Ajout de la liste d'archive, archivage et désarchivage d'une tâche + ajout d'utilisateur" />
     <MESSAGE value="Ajout de la fonction Modifier une tâche" />
     <MESSAGE value="Ajout de la fonction Ajouter une tâche" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout de la fonction Ajouter une tâche" />
+    <MESSAGE value="Ajout de la page right.php (qui s'occupe de la gestion des droits" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de la page right.php (qui s'occupe de la gestion des droits" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="181" key="#SQL_Dialects" timestamp="1574322931192">

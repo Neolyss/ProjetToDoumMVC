@@ -3,7 +3,7 @@
 
 class RightModel extends Model
 {
-
+    // Pour toutes ?
     public static function getDroits($idList)
     {
         $db = Database::getConnexion();
@@ -12,15 +12,16 @@ class RightModel extends Model
         $liste = $db->query($sql)->fetch();
         return $liste;
     }
-
-    public static function setAdmin($user, $id){
-        $sql = "INSERT INTO droit VALUES ('". $id ."',
-                                 '". $user ."',
-                                 'admin')";
-    }
-
-    public static function addRightUsers(){
-
+    // Ajouter valeur de retour
+    public static function addRightUser($idList,$idUser,$droit){
+        // Ajoute les droits indiqués dans le formulaire avec la liste indiqué, l'identifiant de l'utilisateur et le nom du droit
+        $db = Database::getConnexion();
+        $sql = "INSERT INTO droit VALUES (
+            '". $idList."',
+            '". $idUser."',
+            '". $droit ."')";
+        //var_dump($sql);
+        $db->query($sql);
     }
 
     public static function getUsersToAddToAList($idList){
