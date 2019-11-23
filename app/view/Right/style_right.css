@@ -1,0 +1,192 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+    background: #222;
+    color: #eee;
+    font-family: "Dosis", sans-serif;
+
+    display: grid;
+}
+
+header{
+    width: 100vw;
+    height: 10vh;
+
+    grid-column: 1;
+    grid-row : 1 / 2;
+
+    background: #404040;
+    color: #ffffff;
+}
+
+header > h1 {
+    position: relative;
+
+    width: 100%;
+    height: auto;
+
+    margin: 0px;
+
+    text-align: center;
+
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+header > h1 > a {
+    text-decoration: none;
+    color: white;
+}
+
+header > p {
+    text-align: center;
+}
+
+header > form {
+    text-align: center;
+}
+
+header > div {
+    position: absolute;
+    display: flex;
+    height: 10vh;
+    width: 15%;
+    align-items: center;
+    top : 0%;
+    right: 0%;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.brk-btn {
+    background: none;
+    color: aqua;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 0.2em solid aqua;
+    padding: 0.5em 1em;
+}
+
+main {
+    grid-column: 1;
+    grid-row: 2 / 3;
+
+    width: 100vw;
+    height: 85vh;
+
+    margin: 0px;
+
+    color: white;
+    z-index: 0;
+}
+
+main > nav {
+    width: 15%;
+    height: 100%;
+
+    background: dimgrey;
+
+    float: left;
+}
+
+#right_container {
+    width: 85%;
+    height: 100%;
+
+    float: right;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#right_container p {
+    margin: 0px;
+    height: auto;
+    text-align: center;
+    font-size: 25px;
+}
+
+#right_container a {
+    text-decoration: none;
+}
+#right_container a p{
+    border: 2px solid;
+    border-radius: 8px;
+    margin: auto;
+    border-color: darkred;
+    width: 60px;
+    color: red;
+    font-size: 15px;
+}
+
+#profil {
+    overflow: hidden;
+
+    width: 100%;
+    height: 25%;
+
+    background: slategrey;
+}
+
+#profil > p{
+    margin: 0px;
+    text-color : #00b3ff;
+}
+
+#activite {
+    width: 100%;
+    height: 75%;
+
+    background: darkslategrey;
+}
+
+#retard {
+    margin: 0px;
+}
+
+#echeance {
+    margin: 0px;
+}
+
+
+
+#formAdd {
+    position: relative;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%,-50%);
+
+    display: flex;
+    flex-direction: column;
+}
+
+footer{
+    grid-column: 1;
+    grid-row: 3 / 4;
+
+    width: 100vw;
+    height: 5vh;
+
+    bottom: 0;
+    padding: 0 0px;
+    left: 0;
+
+    background:#404040;
+
+    box-sizing: border-box;
+}
+
+footer p{
+    float :left;
+    color: #ffffff;
+    margin-left: 10px;
+    height: 0px;
+}
+
+.error {
+    color: red;
+}

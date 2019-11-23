@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="378705a4-b5ee-4bb3-8907-ff2fff4a68e7" name="Default Changelist" comment="Ajout de la fonction Modifier une tâche">
-      <change afterPath="$PROJECT_DIR$/app/view/Task/display_task.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/view/Task/newTask.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/view/Task/style_display_task.css" afterDir="false" />
+    <list default="true" id="378705a4-b5ee-4bb3-8907-ff2fff4a68e7" name="Default Changelist" comment="Ajout de la fonction Ajouter une tâche">
+      <change afterPath="$PROJECT_DIR$/app/controller/RightController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/Right/display_right.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/Right/right.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/Right/style_right.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controller/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/TaskController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/kernel/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/kernel/Router.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/DroitModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/RightModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/model/ListModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/ListModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/model/TaskModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/TaskModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/List/display_list.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/List/display_list.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/UserModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/UserModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/User/display_home.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/User/display_home.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +52,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/view/Task" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/view/Right" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -60,6 +62,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\ProjetToDoumMVC\app\view\Right" />
       <recent name="C:\wamp64\www\ProjetToDoumMVC\app\view\Task" />
       <recent name="C:\wamp64\www\ProjetToDoumMVC\app\view\List" />
       <recent name="C:\wamp64\www\ProjetToDoumMVC\app\view\Connexion" />
@@ -93,7 +96,7 @@
       <workItem from="1574262990474" duration="12287000" />
       <workItem from="1574321361188" duration="13408000" />
       <workItem from="1574353024587" duration="7975000" />
-      <workItem from="1574424834930" duration="11789000" />
+      <workItem from="1574424834930" duration="14252000" />
     </task>
     <task id="LOCAL-00001" summary="Version MVC ( Mise en place du kernel, de la config ) + Page de connexion ( 1ère Vue )">
       <created>1572859642076</created>
@@ -151,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574497266944</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Ajout de la fonction Ajouter une tâche">
+      <created>1574499661947</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1574499661947</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,17 +189,18 @@
     <MESSAGE value="Affichage partielle d'une liste + Profil + Deconnexion(bouton)" />
     <MESSAGE value="Ajout de la liste d'archive, archivage et désarchivage d'une tâche + ajout d'utilisateur" />
     <MESSAGE value="Ajout de la fonction Modifier une tâche" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout de la fonction Modifier une tâche" />
+    <MESSAGE value="Ajout de la fonction Ajouter une tâche" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de la fonction Ajouter une tâche" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="181" key="#SQL_Dialects" timestamp="1574322931192">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="181" key="#SQL_Dialects/0.0.1920.1040@0.0.1920.1040" timestamp="1574322931192" />
-    <state x="714" y="56" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1572007599738">
+    <state x="714" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1574500255259">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="714" y="56" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1572007599738" />
+    <state x="714" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1574500255259" />
     <state x="79" y="132" width="1736" height="856" key="DiffContextDialog" timestamp="1574166963464">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -206,10 +217,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="754" y="354" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1574355715920" />
-    <state x="171" y="902" key="NewPhpFileDialog" timestamp="1574497633258">
+    <state x="171" y="902" key="NewPhpFileDialog" timestamp="1574500531217">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="171" y="902" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1574497633258" />
+    <state x="171" y="902" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1574500531217" />
     <state x="722" y="233" key="RollbackChangesDialog" timestamp="1574355699749">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -218,10 +229,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1571897754726" />
-    <state x="552" y="255" key="Vcs.Push.Dialog.v2" timestamp="1574497282323">
+    <state x="552" y="255" key="Vcs.Push.Dialog.v2" timestamp="1574499669054">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="255" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1574497282323" />
+    <state x="552" y="255" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1574499669054" />
     <state x="668" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1574424855970">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

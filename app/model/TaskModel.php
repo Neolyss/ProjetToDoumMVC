@@ -1,6 +1,6 @@
 <?php
 
-class TaskModel
+class TaskModel extends Model
 {
 
     public static function updateTask($nom, $date, $notes, $lien, $idTask)

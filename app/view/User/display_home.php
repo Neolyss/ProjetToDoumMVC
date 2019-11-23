@@ -77,8 +77,7 @@
                         echo "<p><a href='index.php?action=showList&idList=". $list["Id_list"] . "'>". $list["Nom_list"] ."</a> Droit = " . $list['Droit_list']."</p>";
                         // Si l'utilisateur a le droit de donner les droits
                         if($list['Droit_list'] == "admin") {
-                            // A FAIRE
-                            echo ("<a href='gestionDroit.php?idList=". $list['Id_list']."'>Modifier droit liste </a>");
+                            echo ("<a href='index.php?action=right&idList=". $list['Id_list']."'>Modifier droit liste </a>");
                         }
                     }
                 echo("

@@ -1,7 +1,7 @@
 <?php
 
 
-class ListModel
+class ListModel extends Model
 {
 
     public static function getArchivedLists($idList){

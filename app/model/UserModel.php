@@ -125,14 +125,4 @@ class UserModel extends Model {
         $ligne = $db->query("SELECT Mail_user FROM utilisateur WHERE Username='" . $_SESSION['user'] . "'")->fetch();
         return $ligne['Mail_user'];
     }
-
-    public static function getUsersToAddToAList($id){
-        $db = Database::getConnexion();
-        $sql = "SELECT t1.Id_user,t1.Username FROM utilisateur as t1 LEFT JOIN 
-        (SELECT Id_user,Username FROM utilisateur NATURAL JOIN droit NATURAL JOIN liste 
-        WHERE Id_list =". $id .") as t2 ON t1.Id_user = t2.Id_user WHERE t2.Id_user IS NULL;";
-        $ligne = $db->query($sql)->fetch();
-        return $ligne;
-    }
-
 }
