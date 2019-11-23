@@ -22,20 +22,19 @@
                 <main>
                     <nav>
                         <div id='profil'>");
-                        if (isset($_REQUEST['action'])) { // si le bouton est appuyé
-                            if($_REQUEST['action'] == "modify") {
-                                //var_dump($this->data);
-                                echo ("
-                                <p>Modification du Profil</p> 
-                                <form method='post' action='index.php?action=update&idUser=". $this->data['idUser'] ."'>
-                                <p> Pseudo : <input type='text' name='username' value='". $_SESSION['user']."'/></p>
-                                <p> Mail : <input type='text' name='mail' value='". $this->data['mail'] ."'/></p>
-                                <input class='brk-btn' type='submit' value='Modifier'>
-                                </form>
-                                ");
-                            }
-                            else {
-                                echo("
+                        if($_REQUEST['action'] == "modify") { // si le bouton est appuyé
+                            //var_dump($this->data);
+                            echo ("
+                            <p>Modification du Profil</p> 
+                            <form method='post' action='index.php?action=update&idUser=". $this->data['idUser'] ."'>
+                            <p> Pseudo : <input type='text' name='username' value='". $_SESSION['user']."'/></p>
+                            <p> Mail : <input type='text' name='mail' value='". $this->data['mail'] ."'/></p>
+                            <input class='brk-btn' type='submit' value='Modifier'>
+                            </form>
+                            ");
+                        }
+                        else {
+                            echo("
                             <p>Profil</p>
                             <p>Pseudo : " . $_SESSION['user'] ."</p>
                             <p>Email : ");
@@ -44,9 +43,7 @@
                             </p>
                             <a href='index.php?action=modify'><button class='brk-btn'>Modifier le profil</button></a>
                             ");
-                            }
                         }
-
                         echo ("
                         </div>
                         <div id='activite'>");

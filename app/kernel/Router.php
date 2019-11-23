@@ -96,6 +96,14 @@ class Router {
                         "idList" => $_REQUEST['idList']
                     );
                     break;
+                case "showTask":
+                     $result = array(
+                         "controller" => "List",
+                         "action" => "showTask",
+                         "idList" => $_REQUEST['idList'],
+                         "idTask" => $_REQUEST['idTask']
+                     );
+                     break;
                 // TASK
                 case "archive": // Pas de vue associé
                 $result = array(
@@ -109,6 +117,14 @@ class Router {
                     $result = array(
                         "controller" => "Task",
                         "action" => "unarchived",
+                        "idTask" => $_REQUEST['idTask'],
+                        "idList" => $_REQUEST['idList']
+                    );
+                    break;
+                case "updateTask": // Pas de vue associé
+                    $result = array(
+                        "controller" => "Task",
+                        "action" => "updateTask",
                         "idTask" => $_REQUEST['idTask'],
                         "idList" => $_REQUEST['idList']
                     );

@@ -69,37 +69,34 @@
                                         if($this->data['listRight'] == "admin" || $this->data['listRight'] == "lectureEcriture") { // Si on a le droit d'écriture ou admin
                                             echo ("<a href='index.php?action=archive&idTask=".$ligne["Id_task"]."&idList=". $_REQUEST['idList'] ."'><p>Archiver la tache</p></a>");
                                         }
-                                        // Modifier la tâche
+                                    // Lien pour Voir / Modifier la tâche
                                     echo ("    
-                                        <a href='display_list.php?idList=". $_REQUEST['idList'] ."&idTach=". $ligne["Id_task"] ."&modification=true'><p>Voir / Modifier la tache</p></a>   
+                                        <a href='index.php?action=showTask&idList=". $_REQUEST['idList'] ."&idTask=". $ligne["Id_task"] ."'><p>Voir / Modifier la tache</p></a>   
                                     </div>");
                                 }
                         echo("
                         </div>
                     </main>");
-//                    if(isset($_REQUEST['modification'])) {
-//                        if (isset($_REQUEST["idTach"])) {
-//                            $sql = "SELECT * FROM tache WHERE id_tach ='" . $_REQUEST["idTach"] ."';";
-//                            $ligne = $db->query($sql)->fetch();
-//                            $date = date_create($ligne['DateLim_tach']);
-//                            $date_formate = date_format($date,"Y-m-d\Th:i:s");
-//                        }
-//                        echo ("
-//                            <form id='modif' method='post' action='updateTache.php?idList=". $_REQUEST['idList'] ."&idTach=". $ligne['Id_tach']."'>
-//                                <p> Nom Tache : <input type='text' name='nomTache' value='". $ligne["Nom_tach"]. "'/></p>
-//                                <p> Echeance : <input type='datetime-local' name='echeance' value='". $date_formate ."'/></p>
-//                                <p> Notes : <input type='text' name='notes' value='". $ligne['Notes_tach']."'/></p>
-//                                <p> Lien : <input type='text' name='lien' value='". $ligne['Lien_tach']."'/></p>");
-//                            if($droit['Droit_list'] == "admin" || $droit['Droit_list'] == "lectureEcriture") { // Si on a le droit de modifier la tâche
-//                                echo ("<input type='submit' value='Modifier'/>");
-//                            }
-//                            echo("
-//                                <a href='display_list.php?idList=". $_REQUEST['idList'] ."'><p>Retour</p></a>
-//                            </form>");
-//                            echo ("
-//                            <div id='background'></div><style>#modif {display: block; display: flex; flex-direction: column; align-items: center; z-index: 1;}</style>");
-//                        }
-                        echo ("<footer><p>Ce site a été créé par : Chambrin Nathan, Bancel Gilles, Guideau Lucas et Fourier Quentin</p></footer>
+                    if($_REQUEST['action'] == "showTask") {
+                        $task = $this->data['task'][0];
+                        echo ("
+                            <form id='modif' method='post' action='index.php?action=updateTask&idList=". $_REQUEST['idList'] ."&idTask=". $task['Id_task'] ."'>
+                                <p> Nom Tache : <input type='text' name='nomTache' value='". $task['taskName'] . "'/></p>
+                                <p> Echeance : <input type='datetime-local' name='echeance' value='". $task['taskDate'] ."'/></p>
+                                <p> Notes : <input type='text' name='notes' value='". $task['taskNote']."'/></p>
+                                <p> Lien : <input type='text' name='lien' value='". $task['taskLink']."'/></p>");
+                            if($this->data['listRight'] == "admin" || $this->data['listRight'] == "lectureEcriture") { // Si on a le droit de modifier la tâche
+                                echo ("
+                                <input type='submit' value='Modifier'/>
+                                ");
+                            }
+                            echo("
+                                <a href='index.php?action=showList&idList=". $_REQUEST['idList'] ."'><p>Retour</p></a>
+                            </form>");
+                            echo ("
+                            <div id='background'></div><style>#modif {display: block; display: flex; flex-direction: column; align-items: center; z-index: 1;}</style>");
+                    }
+                    echo ("<footer><p>Ce site a été créé par : Chambrin Nathan, Bancel Gilles, Guideau Lucas et Fourier Quentin</p></footer>
                 </body>
             </html>");
         //Sécurité à rajouter

@@ -3,19 +3,21 @@
 class TaskModel
 {
 
-
-    public static function updateTask($nom, $date, $notes, $lien, $id)
+    public static function updateTask($nom, $date, $notes, $lien, $idTask)
     {
+        $date = date_create($date);
+        $date_formate = date_format($date,"Y-m-d H:i:s");
+
         $db = Database::getConnexion();
         $sql = "UPDATE tache SET Nom_tach ='" . $nom . "',
-                            DateLim_tach ='" . $date . "',
+                            DateLim_tach ='" . $date_formate . "',
                             Notes_tach ='" . $notes . "',
                             Lien_tach ='" . $lien . "' WHERE
-                            Id_tach ='" . $id . "' ;";
-        $db->query($sql)->fetch();
+                            Id_tach ='" . $idTask . "';";
+        $db->query($sql);
     }
 
-    public static function addTask($nom, $date, $notes, $lien, $id)
+    public static function addTask($nom, $date, $notes, $lien, $idList)
     {
         $db = Database::getConnexion();
         $sql = "INSERT INTO tache(Nom_tach,DateLim_tach,Arch_tach,Notes_tach,Lien_tach,Id_list) VALUES ('" .$nom . "',
@@ -23,7 +25,7 @@ class TaskModel
                                                                                                    0,
                                                                                                    '" . $notes . "',
                                                                                                    '" . $lien . "',
-                                                                                                   '" . $id . "');";
+                                                                                                   '" . $idList . "');";
         $db->query($sql)->fetch();
     }
 

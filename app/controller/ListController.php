@@ -40,4 +40,19 @@ class ListController extends Controller
         $this->setData($data);
         $this->display();
     }
+
+    public function showTask() {
+        $data = array(
+            'today' => ListModel::getTodayTasks(),
+            'late' => ListModel::getLateTasks(),
+            'mail' => ListModel::getMail(),
+            'listName' => ListModel::getListName($_REQUEST['idList']),
+            'listRight' => ListModel::getRight($_REQUEST['idList']),
+            'taskList' => ListModel::displayTask($_REQUEST['idList']),
+            'task' => ListModel::getTask($_REQUEST['idTask']),
+        );
+        //var_dump($data);
+        $this->setData($data);
+        $this->display();
+    }
 }

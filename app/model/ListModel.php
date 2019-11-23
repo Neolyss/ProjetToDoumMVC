@@ -90,13 +90,27 @@ class ListModel
         return $ligne['nombreActivite'];
     }
 
-    public static function getTask($id)
+    public static function getTask($idTask)
     {
         $db = Database::getConnexion();
-        $sql = "SELECT * FROM tache WHERE id_tach ='" . $id . "';";
-        $request = $db->query($sql)->fetch();
+        $sql = "SELECT * FROM tache WHERE id_tach ='" . $idTask . "';";
+        $request = $db->query($sql)->fetchAll();
         //var_dump($request);
-        return $request;
+        $array = array();
+        foreach($request as $ligne) {
+            $date = date_create($ligne['DateLim_tach']);
+            $date_formate = date_format($date,"Y-m-d\Th:i:s");
+
+            $liste = array(
+                'Id_task' => $ligne['Id_tach'],
+                'taskName' => $ligne['Nom_tach'],
+                'taskDate' => $date_formate,
+                'taskNote' => $ligne['Notes_tach'],
+                'taskLink' => $ligne['Lien_tach']
+            );
+            $array[] = $liste;
+        }
+        return $array;
     }
 
     public static function displayTask($id)
