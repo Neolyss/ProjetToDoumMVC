@@ -129,6 +129,20 @@ class Router {
                         "idList" => $_REQUEST['idList']
                     );
                     break;
+                case "newTask":
+                    $result = array(
+                        "controller" => "Task",
+                        "action" => "newTask",
+                        "idList" => $_REQUEST['idList']
+                    );
+                    break;
+                case "addTask": // Pas de vue associé
+                    $result = array(
+                        "controller" => "Task",
+                        "action" => "addTask",
+                        "idList" => $_REQUEST['idList']
+                    );
+                    break;
             }
         }
         // Vardump de debug

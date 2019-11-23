@@ -29,6 +29,13 @@ class TaskModel
         $db->query($sql)->fetch();
     }
 
+    public static function getListName($idList){
+        $db = Database::getConnexion();
+        $sql = "SELECT Nom_list FROM liste WHERE Id_list ='". $idList . "';";
+        $liste = $db->query($sql)->fetch();
+        return $liste['Nom_list'];
+    }
+
     public static function archiveTask($idTask)
     {
         $db = Database::getConnexion();

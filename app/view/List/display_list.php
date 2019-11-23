@@ -55,8 +55,8 @@
                             <div id='ajoutListe' class='blockList'>");
                                 if($this->data['listRight'] == "admin" || $this->data['listRight'] == "lectureEcriture") { // Si on a les droits de modifier la liste
                                     echo("<p>Menu de creation de taches :</p>
-                                    <a href='ajoutTache.php?idList=" . $_REQUEST['idList'] . "' id='ajoutListetexte'><p>Ajout d'une nouvelle fiche</p></a>
-                                          <a href='index.php?action=listArchived&idList=" . $_REQUEST['idList'] . "' id='ajoutListetexte'><p>Désarchiver une ou plusieurs tâches</p></a>");
+                                    <a href='index.php?action=newTask&idList=" . $_REQUEST['idList'] . "' id='ajoutListetexte'><p>Ajout d'une nouvelle fiche</p></a>
+                                    <a href='index.php?action=listArchived&idList=" . $_REQUEST['idList'] . "' id='ajoutListetexte'><p>Désarchiver une ou plusieurs tâches</p></a>");
                                 }
                                 echo ("<a href='index.php?action=home'><p>Revenir à la l'index des listes</p></a>
                             </div>");

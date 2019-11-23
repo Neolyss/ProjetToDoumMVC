@@ -20,13 +20,6 @@ class ListModel
         return $array;
     }
 
-    public static function getListName($id){
-        $db = Database::getConnexion();
-        $sql = "SELECT Nom_list FROM liste WHERE Id_list ='". $id . "';";
-        $liste = $db->query($sql)->fetch();
-        return $liste['Nom_list'];
-    }
-
     public static function addList($name){
         $db = Database::getConnexion();
         $sql = "INSERT INTO liste(Nom_list,Date_list) VALUES ('" . $name ."', CURRENT_TIMESTAMP);";
@@ -60,6 +53,13 @@ class ListModel
         $ligne = $db->query($sql)->fetch();
 
         return $ligne ['Id_list'];
+    }
+
+    public static function getListName($idList){
+        $db = Database::getConnexion();
+        $sql = "SELECT Nom_list FROM liste WHERE Id_list ='". $idList . "';";
+        $liste = $db->query($sql)->fetch();
+        return $liste['Nom_list'];
     }
 
     public static function getMail(){
