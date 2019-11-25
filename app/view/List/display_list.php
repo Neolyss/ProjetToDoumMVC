@@ -1,39 +1,26 @@
 <?php
-// Sécurité à ajouter
-//    if(!isset($_SESSION["user"])) {  // Si on n'est pas connecté
-//        header("Location: login.php"); // On redirige vers la page Connexion
-//        exit();
-//    }
-//    else {
-        // Gestion de droit à ajouter
-        //if ($droit) { // Si tu possèdes les droits -> Sécurité pour empêcher d'accéder à une liste via l'URL
-            echo("
-            <!DOCTYPE html>
-            <html lang='fr'>
-                <meta charset='utf-8'>
-                <head>
-                    <title>Liste</title>
-                    <link rel='stylesheet' type='text/css' href='../app/view/List/style_display_list.css'>
-                </head>
-                <body>
-                    <header>
-                        <h1><a href='index.php?action=home'>TO DOUM</a></h1>
-                        <div>
-                            <p>Bonjour," . $_SESSION['user'] . "<p/>
-                            <a id='ajouter' href='index.php?action=logout'><button class='brk-btn'>Se déconnecter</button></a>
-                        </div>
+echo("
+    <!DOCTYPE html>
+    <html lang='fr'>
+    <meta charset='utf-8'>
+        <head>
+            <title>Liste</title>
+            <link rel='stylesheet' type='text/css' href='../app/view/List/style_display_list.css'>
+        </head>
+            <body>
+                <header>
+                    <h1><a href='index.php?action=home'>TO DOUM</a></h1>
+                    <div>
+                        <p>Bonjour," . $_SESSION['user'] . "<p/>
+                        <a id='ajouter' href='index.php?action=logout'><button class='brk-btn'>Se déconnecter</button></a>
+                    </div>
                     </header>
                     <main>         
                         <nav>
                             <div id='profil'>
                                 <p>Profil</p>
                                 <p>Pseudo : " . $_SESSION['user'] . "</p>
-                                <p>Email : 
-                                ");
-                                // Mail user
-                                echo($this->data['mail']);
-                                echo("
-                                </p>
+                                <p>Email : " . $this->data['mail'] ." </p>
                             </div>
                             <div id='activite'>");
                                 // Tâches
@@ -46,22 +33,21 @@
                         </nav>
                         <div id='liste'>                 
                             <div id=\"titreListe\" class='blockList'>
-                                <p id='ajoutListeTitre'> Liste : ");
-                                // Nom de la liste
-                                echo ($this->data['listName']);
-                                echo ("
-                                </p>
+                                <p id='ajoutListeTitre'> Liste : " .$this->data['listName']. "</p>
                             </div>
                             <div id='ajoutListe' class='blockList'>");
                                 if($this->data['listRight'] == "admin" || $this->data['listRight'] == "lectureEcriture") { // Si on a les droits de modifier la liste
-                                    echo("<p>Menu de creation de taches :</p>
+                                    echo("
+                                    <p>Menu de creation de taches :</p>
                                     <a href='index.php?action=newTask&idList=" . $_REQUEST['idList'] . "' id='ajoutListetexte'><p>Ajout d'une nouvelle fiche</p></a>
-                                    <a href='index.php?action=listArchived&idList=" . $_REQUEST['idList'] . "' id='ajoutListetexte'><p>Désarchiver une ou plusieurs tâches</p></a>");
+                                    <a href='index.php?action=listArchived&idList=" . $_REQUEST['idList'] . "' id='ajoutListetexte'><p>Désarchiver une ou plusieurs tâches</p></a>
+                                    ");
                                 }
-                                echo ("<a href='index.php?action=home'><p>Revenir à la l'index des listes</p></a>
-                            </div>");
+                                echo (
+                                    "<a href='index.php?action=home'><p>Revenir à la l'index des listes</p></a>
+                            </div>
+                                    ");
                                 // Récuperer les tâches
-                                //var_dump($this->data['taskList']);
                                 foreach ($this->data['taskList'] as $ligne) { // Affichage des tâches
                                     echo "<div class='blockList'>
                                         <p>". $ligne['taskName']. "</p></br>
@@ -99,10 +85,3 @@
                     echo ("<footer><p>Ce site a été créé par : Chambrin Nathan, Bancel Gilles, Guideau Lucas et Fourier Quentin</p></footer>
                 </body>
             </html>");
-        //Sécurité à rajouter
-                    //}
-        //else { // Sécurité
-            //echo "<p style='color: red'>Vous n'avez pas accès à ça !</p>
-                  //<a href='index.php'>Retour</a>";
-        //}
-//}

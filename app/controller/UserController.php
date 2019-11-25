@@ -4,7 +4,7 @@
 class UserController extends Controller
 {
 
-    public function connexion() {
+    public function connexion() { // Montre la page de connexion
         $this->display();
     }
 
@@ -33,15 +33,14 @@ class UserController extends Controller
         }
     }
 
-    public function register() {
+    public function register() { // Montre la page de création de compte
         $this->display();
     }
     
-    public function createUser() {
+    public function createUser() { // Permet de créer un nouvel utilisateur
         session_start();
         if (isset($_POST['user']) && isset($_POST['pwd']) && isset($_POST['mail'])) { // Si l'utilisateur a rempli tous les champs
             if ($_POST['user'] && $_POST['pwd'] && $_POST['mail']) {
-                //var_dump(UserModel::checkUsernameTaken($_POST['user']));
                 if (UserModel::checkUsernameTaken($_POST['user'])) { // Si le pseudo est déjà pris par un autre utilisateur
                     $_SESSION['error'] = "Ce nom est déjà pris par un autre utilisateur";
                     header("Location: index.php?action=register");
@@ -63,19 +62,18 @@ class UserController extends Controller
         }
     }
 
-    public function home() {
+    public function home() { // Affiche la page d'acceuil
         $data = array(
             'today' => UserModel::getTodayTasks(),
             'late' => UserModel::getLateTasks(),
             'mail' => UserModel::getMail(),
             'list' => UserModel::getListsToDisplay()
         );
-        //var_dump($data);
         $this->setData($data);
         $this->display();
     }
 
-    public function modify() {
+    public function modify() { // Affiche la page d'accueuil mais avec le formulaire de modification de compte
         $data = array(
             'today' => UserModel::getTodayTasks(),
             'late' => UserModel::getLateTasks(),
@@ -83,13 +81,11 @@ class UserController extends Controller
             'list' => UserModel::getListsToDisplay(),
             'idUser' => UserModel::getUserId()
         );
-        //var_dump($data);
         $this->setData($data);
         $this->display();
     }
 
-    public function update() {
-        //var_dump($_POST);
+    public function update() { // Permet de mettre à jour le compte
         if(UserModel::updateUserInfo($_POST['username'],$_POST['mail'],$_REQUEST['idUser'])) {
             header("Location: index.php?action=home");
             exit();
@@ -100,7 +96,7 @@ class UserController extends Controller
         }
     }
 
-    public function newList() {
+    public function newList() { // Permet d'ajouter un formulaire à l'utilisateur pour créer une liste
         $data = array(
             'today' => UserModel::getTodayTasks(),
             'late' => UserModel::getLateTasks(),
@@ -108,7 +104,6 @@ class UserController extends Controller
             'list' => UserModel::getListsToDisplay(),
             'idUser' => UserModel::getUserId()
         );
-        //var_dump($data);
         $this->setData($data);
         $this->display();
     }

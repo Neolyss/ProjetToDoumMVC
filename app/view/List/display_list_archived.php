@@ -1,5 +1,4 @@
 <?php
-    // Faire une sécurité
     echo("
         <!DOCTYPE html>
         <html lang='en'>
@@ -55,7 +54,3 @@
                 <footer><p>Ce site a été créé par : Chambrin Nathan, Bancel Gilles, Guideau Lucas et Fourier Quentin</p></footer>
                 </body>
             </html>");
-//        else { // Il n'a pas les droits donc problème de sécurité
-//             echo "<p style='color: red'>Vous n'avez pas accès à ça ! Il faut être administateur ou avoir le droit de modifier la liste pour faire ça !</p>
-//                  <a href='index.php'>Retour</a>";
-//}

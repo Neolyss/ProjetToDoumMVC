@@ -1,5 +1,4 @@
 <?php
-    //if($droit['Droit_list'] == "admin" || $droit['Droit_list'] == "lectureEcriture") { // Si on est admin ou bien on a les droits d'écriture sur la liste
     echo("
         <!DOCTYPE html>
         <html lang='fr'>
@@ -31,11 +30,6 @@
             <footer><p>Ce site a été créé par : Chambrin Nathan, Bancel Gilles, Guideau Lucas et Fourier Quentin</p></footer>
             </body>
         </html>");
-//}
-//else { // Il n'a pas les droits donc problème de sécurité
-//    echo "<p style='color: red'>Vous n'avez pas accès à ça ! Il faut être administateur de la liste ou bien avoir le droit d'écriture pour faire ça !</p>
-//              <a href='index.php'>Retour</a>";
-//}
 
 
 

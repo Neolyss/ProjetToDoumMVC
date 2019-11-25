@@ -4,7 +4,7 @@ class Router {
     public static function analyse($request){
         session_start();
         $result = null;
-        if(!$request) {
+        if(!$request) { // Si la requête est vide
             if(!isset($_SESSION["user"])) { // Si on n'est pas connecté
                 $result = array(
                     "controller" => "User",
@@ -14,9 +14,18 @@ class Router {
             } else {
                 // Redirection vers la page d'accueil
                 header("Location: index.php?action=home");
+                exit();
             }
-        }else {
+        }else if(isset($request['action'])){ // Si une action existe
             switch ($request['action']) {
+                // ERROR
+                case "error":
+                    $result = array(
+                        "controller" => "Error",
+                        "action" => "error",
+                        "type" => $_REQUEST['type']
+                    );
+                    break;
                 // USER
                 case "login":
                     $result = array(
@@ -158,10 +167,14 @@ class Router {
                         "idList" => $_REQUEST['idList']
                     );
                     break;
+                default :
+                    header("Location: index.php?action=error&type=404");
+                    break;
             }
+        } else { // Si rien ne correspond
+            header("Location: index.php?action=error&type=404");
+            exit();
         }
-        // Vardump de debug
-        //var_dump($result);
         return $result;
     }
 }

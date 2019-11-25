@@ -15,7 +15,6 @@ class View
     public function display()
     {
         $vue = "../app/view/".$this->route['controller']."/".$this->route['action'].".php";
-        //var_dump($vue);
         if (file_exists ($vue)) {
             include ($vue);
         }

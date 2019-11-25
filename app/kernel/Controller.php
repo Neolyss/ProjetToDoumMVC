@@ -9,7 +9,6 @@ class Controller
     public function __construct($route)
     {
         $this->route = $route;
-        //var_dump($route);
         $this->vue = new View($route);
     }
 
@@ -21,20 +20,14 @@ class Controller
         return $this->vue;
     }
 
+    // Demande à la vue de s'afficher
     public function display() {
         $this->getVue()->display();
     }
 
+    // Met les données récupérées du controlleur à travers le modèle à la vue
     public function setData($data) {
         $this->getVue()->setData($data);
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getData()
-    {
-        return $this->getVue()->getData();
     }
 
 }

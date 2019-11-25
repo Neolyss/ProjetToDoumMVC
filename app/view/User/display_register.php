@@ -29,7 +29,6 @@
                                 echo("
                                     <p class='error'>" . $_SESSION["error"] . "<p>
                                 ");
-                            //var_dump($_POST);
                             }
                         }
                     echo("

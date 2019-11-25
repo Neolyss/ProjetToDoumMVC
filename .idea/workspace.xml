@@ -1,12 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="378705a4-b5ee-4bb3-8907-ff2fff4a68e7" name="Default Changelist" comment="Ajout de la page right.php (qui s'occupe de la gestion des droits">
+    <list default="true" id="378705a4-b5ee-4bb3-8907-ff2fff4a68e7" name="Default Changelist" comment="Ajout de la fonctionnalité Ajouter Droit">
+      <change afterPath="$PROJECT_DIR$/app/controller/ErrorController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/Error/display_error.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/Error/error.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/Error/style_display_error.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controller/ListController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/ListController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controller/RightController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/RightController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controller/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/TaskController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/kernel/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/kernel/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/kernel/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/kernel/Kernel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/kernel/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/kernel/Router.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/kernel/View.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/kernel/View.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/ListModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/ListModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/model/RightModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/RightModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/TaskModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/TaskModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/User.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/UserModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/UserModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/List/display_list.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/List/display_list.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/List/display_list_archived.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/List/display_list_archived.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/view/Right/display_right.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/Right/display_right.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/Task/display_task.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/Task/display_task.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/User/display_home.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/User/display_home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/User/display_register.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/User/display_register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,9 +64,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/view/Right" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/view/Error" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -55,17 +76,30 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\ProjetToDoumMVC\app\view\Error" />
+      <recent name="C:\wamp64\www\ProjetToDoumMVC\app\view\List" />
+      <recent name="C:\wamp64\www\ProjetToDoumMVC\app\view\User" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\ProjetToDoumMVC\app\view\Error" />
       <recent name="C:\wamp64\www\ProjetToDoumMVC\app\view\Right" />
       <recent name="C:\wamp64\www\ProjetToDoumMVC\app\view\Task" />
       <recent name="C:\wamp64\www\ProjetToDoumMVC\app\view\List" />
       <recent name="C:\wamp64\www\ProjetToDoumMVC\app\view\Connexion" />
-      <recent name="C:\wamp64\www\ProjetToDoumMVC\app\kernel" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\ProjetToDoumMVC\app\view\List" />
-      <recent name="C:\wamp64\www\ProjetToDoumMVC\app\view\User" />
-    </key>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -90,7 +124,12 @@
       <workItem from="1574262990474" duration="12287000" />
       <workItem from="1574321361188" duration="13408000" />
       <workItem from="1574353024587" duration="7975000" />
-      <workItem from="1574424834930" duration="14967000" />
+      <workItem from="1574424834930" duration="15098000" />
+      <workItem from="1574609744584" duration="2781000" />
+      <workItem from="1574675920955" duration="13000" />
+      <workItem from="1574683729356" duration="4137000" />
+      <workItem from="1574691275802" duration="4438000" />
+      <workItem from="1574702966678" duration="2728000" />
     </task>
     <task id="LOCAL-00001" summary="Version MVC ( Mise en place du kernel, de la config ) + Page de connexion ( 1ère Vue )">
       <created>1572859642076</created>
@@ -162,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574502047128</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Ajout de la fonctionnalité Ajouter Droit">
+      <created>1574502770159</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1574502770159</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,7 +238,8 @@
     <MESSAGE value="Ajout de la fonction Modifier une tâche" />
     <MESSAGE value="Ajout de la fonction Ajouter une tâche" />
     <MESSAGE value="Ajout de la page right.php (qui s'occupe de la gestion des droits" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout de la page right.php (qui s'occupe de la gestion des droits" />
+    <MESSAGE value="Ajout de la fonctionnalité Ajouter Droit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de la fonctionnalité Ajouter Droit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="181" key="#SQL_Dialects" timestamp="1574322931192">
@@ -203,6 +250,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="714" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1574500255259" />
+    <state x="598" y="118" key="CommitChangelistDialog2" timestamp="1574708278344">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="598" y="118" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1574708278344" />
     <state x="79" y="132" width="1736" height="856" key="DiffContextDialog" timestamp="1574166963464">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -215,14 +266,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="540" y="265" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1574338954623" />
-    <state x="754" y="354" key="NewPhpClassDialog" timestamp="1574355715920">
+    <state x="754" y="354" key="NewPhpClassDialog" timestamp="1574691843083">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="754" y="354" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1574355715920" />
-    <state x="171" y="902" key="NewPhpFileDialog" timestamp="1574500531217">
+    <state x="754" y="354" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1574691843083" />
+    <state x="171" y="902" key="NewPhpFileDialog" timestamp="1574692576884">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="171" y="902" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1574500531217" />
+    <state x="171" y="902" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1574692576884" />
     <state x="722" y="233" key="RollbackChangesDialog" timestamp="1574355699749">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -231,14 +282,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1571897754726" />
-    <state x="552" y="255" key="Vcs.Push.Dialog.v2" timestamp="1574499669054">
+    <state x="552" y="255" key="Vcs.Push.Dialog.v2" timestamp="1574502775946">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="255" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1574499669054" />
-    <state x="668" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1574424855970">
+    <state x="552" y="255" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1574502775946" />
+    <state x="668" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1574708255747">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="668" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1574424855970" />
+    <state x="668" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1574708255747" />
     <state x="771" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1574497274134">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

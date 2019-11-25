@@ -1,5 +1,4 @@
 <?php
-    //var_dump($this->data);
     echo("
         <!DOCTYPE html>
         <html lang='fr'>
